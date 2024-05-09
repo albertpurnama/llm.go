@@ -1,4 +1,4 @@
-package llmgo
+package old_tokenizer
 
 import (
 	"encoding/binary"
@@ -54,10 +54,6 @@ func NewTokenizer(filename string) (Tokenizer, error) {
 		}
 		tok.tokenTable[i] = string(tokenBytes)
 		tok.trie.Insert(tokenBytes, int32(i))
-		// these are bpeRank
-		if i > 250 && i < 270 {
-			// fmt.Println(string(tokenBytes), int32(i))
-		}
 	}
 	return tok, nil
 }
